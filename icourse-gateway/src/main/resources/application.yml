@@ -1,0 +1,15 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: icourse-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.1.2:8848
+    gateway:
+      routes:
+        - id: icourse-admin
+          uri: lb://icourse-admin
+          predicates:
+            - Path=/sms/**
