@@ -1,4 +1,4 @@
-package dlub.icoders.icourse;
+package club.icoders.icourse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
