@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.common.utils;
+package club.icoders.icourse.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;

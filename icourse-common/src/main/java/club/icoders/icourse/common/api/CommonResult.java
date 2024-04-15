@@ -1,6 +1,7 @@
-package dlub.icoders.icourse.common.api;
+package club.icoders.icourse.common.api;
 
-import dlub.icoders.icourse.common.exception.ExceptionResultCode;
+import club.icoders.icourse.common.exception.ExceptionResultCode;
+import com.alibaba.cloud.commons.lang.StringUtils;
 import lombok.Data;
 
 /**
@@ -135,7 +136,7 @@ public class CommonResult<T> {
     }
 
     public static <T> CommonResult<T> exception(String errorCode,String errorMessage) {
-        return new CommonResult<>(HttpStatus.EXCEPTION.getHttpStatus(), errorCode, errorMessage);
+        return new CommonResult<>(HttpStatus.EXCEPTION.getHttpStatus(), StringUtils.isEmpty(errorCode) ? ExceptionResultCode.COMMON.getCode() : errorCode, errorMessage);
     }
 
     public static <T> CommonResult<T> exception(String errorMessage) {

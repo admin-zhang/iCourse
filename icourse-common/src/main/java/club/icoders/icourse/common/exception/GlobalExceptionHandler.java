@@ -1,7 +1,6 @@
-package dlub.icoders.icourse.common.exception;
+package club.icoders.icourse.common.exception;
 
-import dlub.icoders.icourse.common.api.CommonResult;
-import dlub.icoders.icourse.common.api.IErrorCode;
+import club.icoders.icourse.common.api.CommonResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;

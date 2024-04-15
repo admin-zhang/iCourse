@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.common.api;
+package club.icoders.icourse.common.api;
 
 /**
  * @ClassName HttpStatus.java

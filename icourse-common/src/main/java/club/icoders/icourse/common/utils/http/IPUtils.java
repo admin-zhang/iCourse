@@ -1,8 +1,8 @@
-package dlub.icoders.icourse.common.utils.http;
+package club.icoders.icourse.common.utils.http;
 
+import club.icoders.icourse.common.constants.IPUtilsConstrants;
+import club.icoders.icourse.common.utils.StrUtils;
 import com.alibaba.cloud.commons.lang.StringUtils;
-import dlub.icoders.icourse.common.utils.StrUtils;
-import dlub.icoders.icourse.common.constants.IPUtilsConstrants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.common.constants;
+package club.icoders.icourse.common.constants;
 
 import lombok.AllArgsConstructor;
 

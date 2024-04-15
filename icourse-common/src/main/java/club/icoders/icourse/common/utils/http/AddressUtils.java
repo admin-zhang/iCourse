@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.common.utils.http;
+package club.icoders.icourse.common.utils.http;
 
 import com.alibaba.cloud.commons.lang.StringUtils;
 import org.apache.commons.io.FileUtils;

@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.common.utils.http;
+package club.icoders.icourse.common.utils.http;
 
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;

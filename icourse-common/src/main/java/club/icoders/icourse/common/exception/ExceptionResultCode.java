@@ -1,6 +1,6 @@
-package dlub.icoders.icourse.common.exception;
+package club.icoders.icourse.common.exception;
 
-import dlub.icoders.icourse.common.api.IErrorCode;
+import club.icoders.icourse.common.api.IErrorCode;
 
 /**
  * @ClassName ExceptionResultCode.java
