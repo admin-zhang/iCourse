@@ -6,6 +6,6 @@ spring:
       test-while-idle: true
       test-on-return: false
       validation-query: select 1
-      url: jdbc:mysql://localhoat:3306/icourse?serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://localhost:3306/icourse?serverTimezone=Asia/Shanghai
       username: icourse
       password: icourse@123
