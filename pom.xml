@@ -15,6 +15,7 @@
         <module>icourse-gateway</module>
         <module>icourse-service</module>
         <module>icourse-admin</module>
+        <module>icourse-model</module>
     </modules>
     <properties>
         <java.version>11</java.version>
@@ -25,6 +26,11 @@
         <spring-cloud.version>2021.0.5</spring-cloud.version>
         <ip2region.version>1.7.2</ip2region.version>
         <commons.io.version>2.11.0</commons.io.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
+        <druid.version>1.2.15</druid.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <knife4j.version>4.1.0</knife4j.version>
+
     </properties>
 
     <dependencies>
@@ -103,6 +109,34 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
+            </dependency>
+
+            <!--Mysql数据库驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <!--集成druid连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--MyBatis-Plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--引入Knife4j的官方start包-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
