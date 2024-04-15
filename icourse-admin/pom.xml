@@ -30,6 +30,18 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>club.icoders.icourse</groupId>
+            <artifactId>icourse-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dlub.icoders.icourse</groupId>
+            <artifactId>icourse-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
 
         <!--Mysql数据库驱动-->
         <dependency>
