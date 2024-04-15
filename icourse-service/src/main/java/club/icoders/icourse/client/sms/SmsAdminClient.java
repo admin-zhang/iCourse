@@ -1,4 +1,4 @@
-package dlub.icoders.icourse.client.sms;
+package club.icoders.icourse.client.sms;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(contextId = "smsAdminClient",name = "iCourse-admin")
 public interface SmsAdminClient {
 
-    @GetMapping("/sms/admin/hi")
-    String getHi();
+    @GetMapping("/sms/admin/list")
+    String listSmsAdmin(String keyWord, Integer pageSize, Integer pageNum);
 }
