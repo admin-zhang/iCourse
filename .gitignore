@@ -25,9 +25,9 @@ replay_pid*
 
 # Intellij IDEA #
 /.idea/
-/*.iws
-/*.iml
-/*.ipr
+/**/**.iws
+/**/**.iml
+/**/**.ipr
 
 target/
 /**/src/test/
