@@ -1,12 +1,12 @@
 package club.icoders.icourse.model.sms;
 
-import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -20,7 +20,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(description = "管理员")
-public class SmsAdmin {
+public class SmsAdmin implements Serializable {
 
     private static final long serialVersionUID = -6471315255025872300L;
 

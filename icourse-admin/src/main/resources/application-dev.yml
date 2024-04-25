@@ -9,3 +9,7 @@ spring:
       url: jdbc:mysql://localhost:3306/icourse?serverTimezone=Asia/Shanghai
       username: icourse
       password: icourse@123
+pagehelper:
+  reasonable: false
+  default-count: true
+  properties: propertyValue

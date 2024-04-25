@@ -2,7 +2,6 @@ package club.icoders.icourse.controller;
 
 import club.icoders.icourse.model.sms.SmsAdmin;
 import com.apifan.common.random.RandomSource;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import club.icoders.icourse.common.api.CommonResult;
 import club.icoders.icourse.service.SmsAdminService;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +29,11 @@ public class SmsAdminController {
     }
 
     @GetMapping("/list")
-    public CommonResult<Page<SmsAdmin>> listSmsAdmin(@RequestParam(value = "keyWord", required = false) String keyWord,
+    public CommonResult<SmsAdmin> listSmsAdmin(@RequestParam(value = "keyWord", required = false) String keyWord,
                                                      @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
                                                      @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
 
-        Page<SmsAdmin> smsAdminList = smsAdminService.list(keyWord, pageSize, pageNum);
-        return CommonResult.success(smsAdminList);
+
+        return CommonResult.success();
     }
 }

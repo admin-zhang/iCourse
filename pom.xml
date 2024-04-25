@@ -28,7 +28,8 @@
         <commons.io.version>2.11.0</commons.io.version>
         <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.2.15</druid.version>
-        <mybatis.version>3.0.3</mybatis.version>
+        <mybatis.version>2.2.0</mybatis.version>
+        <pageHelper.version>2.1.0</pageHelper.version>
         <knife4j.version>4.1.0</knife4j.version>
 
     </properties>
@@ -130,6 +131,13 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+
+            <!--PageHelper-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pageHelper.version}</version>
             </dependency>
 
             <!--引入Knife4j的官方start包-->
