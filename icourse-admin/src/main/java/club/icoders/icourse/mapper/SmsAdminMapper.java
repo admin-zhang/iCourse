@@ -1,7 +1,5 @@
 package club.icoders.icourse.mapper;
 
-import club.icoders.icourse.model.sms.SmsAdmin;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -12,5 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Version 1.0
  */
 @Mapper
-public interface SmsAdminMapper extends BaseMapper<SmsAdmin> {
+public interface SmsAdminMapper {
 }

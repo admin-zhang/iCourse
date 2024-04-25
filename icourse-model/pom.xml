@@ -22,12 +22,6 @@
   </properties>
 
   <dependencies>
-    <!--MyBatis-Plus-->
-    <dependency>
-      <groupId>com.baomidou</groupId>
-      <artifactId>mybatis-plus-boot-starter</artifactId>
-    </dependency>
-
     <!--引入Knife4j的官方start包-->
     <dependency>
       <groupId>com.github.xiaoymin</groupId>

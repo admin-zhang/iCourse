@@ -28,7 +28,7 @@
         <commons.io.version>2.11.0</commons.io.version>
         <mysql-connector.version>8.0.28</mysql-connector.version>
         <druid.version>1.2.15</druid.version>
-        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis.version>3.0.3</mybatis.version>
         <knife4j.version>4.1.0</knife4j.version>
 
     </properties>
@@ -125,11 +125,11 @@
                 <version>${druid.version}</version>
             </dependency>
 
-            <!--MyBatis-Plus-->
+            <!--MyBatis-->
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
 
             <!--引入Knife4j的官方start包-->
