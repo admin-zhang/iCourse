@@ -52,7 +52,7 @@ public class SmsAdmin {
     private Integer status;
 
     @ApiModelProperty(value = "删除标志 0->存在;1->删除")
-    private Integer delFlg;
+    private Integer delFlag;
 
     @ApiModelProperty(value = "创建者", example = "创建者")
     private String createBy;

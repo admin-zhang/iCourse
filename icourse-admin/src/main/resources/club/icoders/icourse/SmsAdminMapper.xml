@@ -3,6 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="club.icoders.icourse.mapper.SmsAdminMapper">
-
+    <resultMap id="BaseResultMap" type="club.icoders.icourse.model.sms.SmsAdmin">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="passWord" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="phonenumber" jdbcType="VARCHAR" property="phoneNumber" />
+        <result column="sex" jdbcType="CHAR" property="sex" />
+        <result column="status" jdbcType="TINYINT" property="status" />
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+        <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, user_name, `password`, nick_name, email, icon, phonenumber, sex, `status`, del_flag,
+        create_by, create_time, update_by, update_time, note
+    </sql>
 
 </mapper>
