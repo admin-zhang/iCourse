@@ -7,6 +7,7 @@ import club.icoders.icourse.service.SmsAdminService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName SmsAdminController.java
@@ -23,17 +24,12 @@ public class SmsAdminController {
     @Resource
     private SmsAdminService smsAdminService;
 
-    @GetMapping("/hi")
-    public String hi() {
-        return RandomSource.personInfoSource().randomChineseName();
-    }
-
     @GetMapping("/list")
-    public CommonResult<SmsAdmin> listSmsAdmin(@RequestParam(value = "keyWord", required = false) String keyWord,
+    public CommonResult<List<SmsAdmin>> listSmsAdmin(@RequestParam(value = "keyWord", required = false) String keyWord,
                                                      @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
                                                      @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+        List<SmsAdmin> smsAdminList = smsAdminService.listSmsAdmin(keyWord, pageSize, pageNum);
 
-
-        return CommonResult.success();
+        return CommonResult.success(smsAdminList);
     }
 }

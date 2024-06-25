@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="club.icoders.icourse.mapper.SmsAdminMapper">
     <resultMap id="BaseResultMap" type="club.icoders.icourse.model.sms.SmsAdmin">
+        <!--@mbg.generated-->
+        <!--@Table sms_admin-->
         <id column="id" jdbcType="VARCHAR" property="id" />
         <result column="user_name" jdbcType="VARCHAR" property="userName" />
         <result column="password" jdbcType="VARCHAR" property="passWord" />
         <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
         <result column="email" jdbcType="VARCHAR" property="email" />
         <result column="icon" jdbcType="VARCHAR" property="icon" />
-        <result column="phonenumber" jdbcType="VARCHAR" property="phoneNumber" />
+        <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
         <result column="sex" jdbcType="CHAR" property="sex" />
         <result column="status" jdbcType="TINYINT" property="status" />
         <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
@@ -21,10 +21,213 @@
         <result column="note" jdbcType="VARCHAR" property="note" />
     </resultMap>
     <sql id="Base_Column_List">
-        id, user_name, `password`, nick_name, email, icon, phonenumber, sex, `status`, del_flag,
+        id, user_name, `password`, nick_name, email, icon, phone_number, sex, `status`, del_flag,
         create_by, create_time, update_by, update_time, note
     </sql>
 
+    <select id="getSmsAdminById" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from sms_admin
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
 
+    <delete id="deleteSmsAdminById" parameterType="java.lang.String">
+        delete from sms_admin
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
 
+    <insert id="insert" parameterType="club.icoders.icourse.model.sms.SmsAdmin">
+        <!--@mbg.generated-->
+        insert into sms_admin (id, user_name, `password`,
+        nick_name, email, icon,
+        phone_number, sex, `status`,
+        del_flag, create_by, create_time,
+        update_by, update_time, note
+        )
+        values (#{id,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR},
+        #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR},
+        #{phoneNumber,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{status,jdbcType=TINYINT},
+        #{delFlag,jdbcType=TINYINT}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+        #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{note,jdbcType=VARCHAR}
+        )
+    </insert>
+
+    <insert id="insertSelective" parameterType="club.icoders.icourse.model.sms.SmsAdmin">
+        insert into sms_admin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="passWord != null">
+                `password`,
+            </if>
+            <if test="nickName != null">
+                nick_name,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+            <if test="phoneNumber != null">
+                phone_number,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateBy != null">
+                update_by,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="note != null">
+                note,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="passWord != null">
+                #{passWord,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="icon != null">
+                #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNumber != null">
+                #{phoneNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=CHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag,jdbcType=TINYINT},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="note != null">
+                #{note,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="club.icoders.icourse.model.sms.SmsAdmin">
+        update sms_admin
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="passWord != null">
+                `password` = #{passWord,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="icon != null">
+                icon = #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNumber != null">
+                phone_number = #{phoneNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=CHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="delFlag != null">
+                del_flag = #{delFlag,jdbcType=TINYINT},
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                update_by = #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="note != null">
+                note = #{note,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="club.icoders.icourse.model.sms.SmsAdmin">
+        update sms_admin
+        set user_name = #{userName,jdbcType=VARCHAR},
+        `password` = #{passWord,jdbcType=VARCHAR},
+        nick_name = #{nickName,jdbcType=VARCHAR},
+        email = #{email,jdbcType=VARCHAR},
+        icon = #{icon,jdbcType=VARCHAR},
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+        sex = #{sex,jdbcType=CHAR},
+        `status` = #{status,jdbcType=TINYINT},
+        del_flag = #{delFlag,jdbcType=TINYINT},
+        create_by = #{createBy,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_by = #{updateBy,jdbcType=VARCHAR},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        note = #{note,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <select id="listSmsAdmin" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sms_admin
+        <where>
+            <if test="keyWord != null and keyWord != ''">
+                nick_name like concat(concat('%',#{keyWord},'%'))
+            </if>
+        </where>
+        limit #{pageNum},#{pageSize}
+    </select>
 </mapper>

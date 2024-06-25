@@ -1,5 +1,9 @@
 package club.icoders.icourse.service;
 
+import club.icoders.icourse.model.sms.SmsAdmin;
+
+import java.util.List;
+
 /**
  * @ClassName SmsAdminService.java
  * @Description
@@ -9,4 +13,7 @@ package club.icoders.icourse.service;
  */
 public interface SmsAdminService {
 
+    Integer insertSmsAdmin(SmsAdmin smsAdmin);
+
+    List<SmsAdmin> listSmsAdmin(String keyWord, Integer pageSize, Integer pageNum);
 }

@@ -1,6 +1,10 @@
 package club.icoders.icourse.mapper;
 
+import club.icoders.icourse.model.sms.SmsAdmin;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @ClassName SmsAdminMapper.xml.java
@@ -11,4 +15,18 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface SmsAdminMapper {
+    List<SmsAdmin> listSmsAdmin(@Param("keyWord") String keyWord, @Param("pageSize") Integer pageSize, @Param("pageNum") Integer pageNum);
+
+    SmsAdmin getSmsAdminById(Integer id);
+
+    int deleteSmsAdminById(Integer id);
+
+    int insert(SmsAdmin smsAdmin);
+
+    int insertSelective(SmsAdmin smsAdmin);
+
+    int updateByPrimaryKeySelective(SmsAdmin smsAdmin);
+
+    int updateByPrimaryKey(SmsAdmin smsAdmin);
+
 }
