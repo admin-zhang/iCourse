@@ -33,3 +33,4 @@ target/
 /**/src/test/
 /icourse-common/src/test/
 /temp/
+/icourse-admin/src/main/resources/application-local.yml

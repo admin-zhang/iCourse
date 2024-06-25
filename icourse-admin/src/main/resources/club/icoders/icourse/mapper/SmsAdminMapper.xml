@@ -20,10 +20,23 @@
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
         <result column="note" jdbcType="VARCHAR" property="note" />
     </resultMap>
+
     <sql id="Base_Column_List">
         id, user_name, `password`, nick_name, email, icon, phone_number, sex, `status`, del_flag,
         create_by, create_time, update_by, update_time, note
     </sql>
+
+    <select id="listSmsAdmin" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sms_admin
+        <where>
+            <if test="keyWord != null and keyWord != ''">
+                nick_name like concat(concat('%',#{keyWord},'%'))
+            </if>
+        </where>
+        limit #{pageNum},#{pageSize}
+    </select>
 
     <select id="getSmsAdminById" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
@@ -219,15 +232,4 @@
         where id = #{id,jdbcType=VARCHAR}
     </update>
 
-    <select id="listSmsAdmin" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from sms_admin
-        <where>
-            <if test="keyWord != null and keyWord != ''">
-                nick_name like concat(concat('%',#{keyWord},'%'))
-            </if>
-        </where>
-        limit #{pageNum},#{pageSize}
-    </select>
 </mapper>

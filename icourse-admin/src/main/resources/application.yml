@@ -1,17 +1,16 @@
 server:
   port: 8180
 
-
 spring:
   application:
     name: icourse-admin
-  cloud:
-    nacos:
-      server-addr: 192.168.1.2:8848
-
   profiles:
     active: dev
 
 feign:
   okhttp:
     enabled: true
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
