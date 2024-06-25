@@ -35,7 +35,6 @@
                 nick_name like concat(concat('%',#{keyWord},'%'))
             </if>
         </where>
-        limit #{pageNum},#{pageSize}
     </select>
 
     <select id="getSmsAdminById" parameterType="java.lang.String" resultMap="BaseResultMap">

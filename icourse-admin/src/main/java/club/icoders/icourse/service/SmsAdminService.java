@@ -1,6 +1,7 @@
 package club.icoders.icourse.service;
 
 import club.icoders.icourse.model.sms.SmsAdmin;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface SmsAdminService {
 
     Integer insertSmsAdmin(SmsAdmin smsAdmin);
 
-    List<SmsAdmin> listSmsAdmin(String keyWord, Integer pageSize, Integer pageNum);
+    PageInfo<SmsAdmin> listSmsAdmin(String keyWord, Integer pageSize, Integer pageNum);
 }

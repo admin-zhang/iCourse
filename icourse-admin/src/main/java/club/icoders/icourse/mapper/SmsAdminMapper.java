@@ -15,7 +15,8 @@ import java.util.List;
  */
 @Mapper
 public interface SmsAdminMapper {
-    List<SmsAdmin> listSmsAdmin(@Param("keyWord") String keyWord, @Param("pageSize") Integer pageSize, @Param("pageNum") Integer pageNum);
+
+    List<SmsAdmin> listSmsAdmin(@Param("keyWord") String keyWord);
 
     SmsAdmin getSmsAdminById(Integer id);
 
@@ -28,5 +29,6 @@ public interface SmsAdminMapper {
     int updateByPrimaryKeySelective(SmsAdmin smsAdmin);
 
     int updateByPrimaryKey(SmsAdmin smsAdmin);
+
 
 }
