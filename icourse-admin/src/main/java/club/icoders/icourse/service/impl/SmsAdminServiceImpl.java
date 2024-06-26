@@ -2,7 +2,6 @@ package club.icoders.icourse.service.impl;
 
 import club.icoders.icourse.common.api.ExceptionResultCode;
 import club.icoders.icourse.common.asserts.ICourseAssert;
-import club.icoders.icourse.common.exception.ICourseException;
 import club.icoders.icourse.constant.SmsConstants;
 import club.icoders.icourse.constant.UserConstant;
 import club.icoders.icourse.dto.SmsAdminParam;
