@@ -26,22 +26,22 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(value = ICourseException.class)
     public CommonResult<Object> icourseExceptionHandler(HttpServletResponse response, ICourseException e) {
-        logger.info("发生业务异常，原因是：{}", e.getMessage());
+        logger.error("发生业务异常，原因是：[{}：{}]", e.getErrCode(), e.getErrMessage());
         return CommonResult.exception(e.getErrCode(), e.getErrMessage());
     }
 
     @ResponseBody
     @ExceptionHandler(value = BindException.class)
     public CommonResult<Object> bindExceptionHandler(HttpServletResponse response, BindException e) {
-        logger.error("valid校验参数时发生异常，原因是：{}", e.getMessage());
-        return CommonResult.exception("441",e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        logger.error("valid校验参数时发生异常，原因是：{}", e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        return CommonResult.exception("441", e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
     }
 
     @ResponseBody
     @ExceptionHandler(value = ConstraintViolationException.class)
     public CommonResult<Object> bindExceptionHandler(HttpServletResponse response, ConstraintViolationException e) {
-        logger.error("valid校验参数时发生异常，原因是：{}", e.getMessage());
-        return CommonResult.exception("441",e.getLocalizedMessage().split(":")[1].trim());
+        logger.error("valid校验参数时发生异常，原因是：{}", e.getLocalizedMessage().split(":")[1].trim());
+        return CommonResult.exception("441", e.getLocalizedMessage().split(":")[1].trim());
     }
 
 }
