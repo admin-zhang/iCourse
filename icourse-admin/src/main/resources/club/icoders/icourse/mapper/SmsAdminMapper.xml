@@ -44,6 +44,30 @@
         where id = #{id,jdbcType=VARCHAR}
     </select>
 
+    <select id="loadSmsAdminByUserName" resultType="club.icoders.icourse.model.sms.SmsAdmin">
+        select
+            <include refid="Base_Column_List" />
+        from sms_admin
+        where user_name = #{userName}
+    </select>
+
+    <select id="getSmsAdminByParams" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from sms_admin
+        <where>
+            <if test="userName != null">
+                user_name = #{userName}
+            </if>
+        <if test="phoneNumber != null">
+            phone_number = #{phoneNumber}
+        </if>
+        <if test="email != null">
+            email = #{email}
+        </if>
+        </where>
+    </select>
+
     <delete id="deleteSmsAdminById" parameterType="java.lang.String">
         delete from sms_admin
         where id = #{id,jdbcType=VARCHAR}

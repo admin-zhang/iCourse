@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName SmsAdminMapper.xml.java
@@ -30,5 +31,7 @@ public interface SmsAdminMapper {
 
     int updateByPrimaryKey(SmsAdmin smsAdmin);
 
+    SmsAdmin loadSmsAdminByUserName(String userName);
 
+    List<SmsAdmin> getSmsAdminByParams(Map<String, Object> conds);
 }

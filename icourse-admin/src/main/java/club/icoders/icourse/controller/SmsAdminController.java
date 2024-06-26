@@ -1,14 +1,16 @@
 package club.icoders.icourse.controller;
 
+import club.icoders.icourse.dto.SmsAdminParam;
 import club.icoders.icourse.model.sms.SmsAdmin;
-import com.apifan.common.random.RandomSource;
 import club.icoders.icourse.common.api.CommonResult;
 import club.icoders.icourse.service.SmsAdminService;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
+import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * @ClassName SmsAdminController.java
@@ -20,10 +22,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sms/admin")
+@Validated
 public class SmsAdminController {
 
     @Resource
     private SmsAdminService smsAdminService;
+
+    @PostMapping("/add")
+    public CommonResult<Objects> save(@Valid @RequestBody SmsAdminParam smsAdminParam) {
+        smsAdminService.insertSmsAdmin(smsAdminParam);
+        return CommonResult.success();
+    }
 
     @GetMapping("/list")
     public CommonResult<PageInfo<SmsAdmin>> listSmsAdmin(@RequestParam(value = "keyWord", required = false) String keyWord,
@@ -31,6 +40,5 @@ public class SmsAdminController {
                                                          @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         PageInfo<SmsAdmin> smsAdminPageInfo = smsAdminService.listSmsAdmin(keyWord, pageSize, pageNum);
         return CommonResult.success(smsAdminPageInfo);
-
     }
 }
